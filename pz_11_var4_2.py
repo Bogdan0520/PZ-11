@@ -5,15 +5,16 @@
 
 '''
     
-with open('text18-4.txt', 'r', encoding='utf8') as file:
+with open('text18-4.txt', 'r') as file:
     s = file.read()
-    print(f'Содержимое текста \n\n{s} \n')
-    alpha_count = 0
-    for i in s:
-        alpha_count += 1 if i.isalpha() else 0
-    print(f'Количество букв: {alpha_count}')
-    
-with open('new_file.txt', 'w', encoding='utf8') as file:
+print(f'Содержимое текста \n\n{s} \n')
+alpha_count = 0
+for i in s:
+    if i.isalpha():
+      alpha_count += 1
+print(f'Количество букв: {alpha_count}')
+
+with open('new_file.txt', 'w') as file:
     file.write(s.lower())
     
     
